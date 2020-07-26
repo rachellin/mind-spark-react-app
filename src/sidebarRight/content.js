@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import 'remixicon/fonts/remixicon.css';
 
 import { UserLinks } from './userLinks';
+import { NotifsTab } from './notifsTab';
 
 export class Content extends React.Component {
     render () {
@@ -10,7 +11,7 @@ export class Content extends React.Component {
             <StyledContent open={this.props.open}>
                 <h1>title</h1>
                 <button onClick={this.props.onClick}><i class="ri-arrow-right-s-line"></i></button>
-                <UserLinks/>
+                {this.props.tab == 'user' ? <UserLinks/> : <NotifsTab/>}
             </StyledContent>
         );
     }

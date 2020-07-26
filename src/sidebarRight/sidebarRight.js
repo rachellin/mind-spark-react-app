@@ -9,11 +9,14 @@ export class SidebarRight extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            open: false
+            open: false,
+            tab: 'user'
         }
     }
 
-    openContent () {
+    openContent (i) {
+        console.log(i);
+        i == 0 ? this.setState({ tab: 'user'}) : this.setState({ tab: 'notifs' });
         this.setState({ open: !this.state.open });
     }
 
@@ -23,10 +26,13 @@ export class SidebarRight extends React.Component {
 
     render () {
         return (
-            <StyledSidebar open={this.state.open}>
-                <Menu onClick={() => this.openContent()}/>
+            <StyledSidebar 
+                open={this.state.open}
+            >
+                <Menu onClick={(i) => this.openContent(i)}/>
                 <Content 
                     open={this.state.open} 
+                    tab={this.state.tab}
                     onClick={() => this.closeContent()}
                 />
             </StyledSidebar>
