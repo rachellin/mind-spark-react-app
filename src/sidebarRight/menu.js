@@ -16,12 +16,12 @@ import 'remixicon/fonts/remixicon.css';
 //     display: block;
 // `;
 
-export class Links extends React.Component {
+export class Menu extends React.Component {
 
     render () {
         return (
             <StyledMenu>
-                <a href="/" onClick={this.props.onClick}><i class="ri-user-line"></i></a>
+                <a onClick={this.props.onClick}><i class="ri-user-line"></i></a>
                 <a href=""><i class="ri-home-2-line"></i></a>
                 <a href=""><i class="ri-compass-3-line"></i></a>
                 <a href=""><i class="ri-notification-2-line"></i></a>

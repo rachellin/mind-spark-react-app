@@ -1,15 +1,34 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Links } from './links';
+import { Menu } from './menu';
 import { Content } from './content';
 
 export class SidebarRight extends React.Component {
+
+    constructor (props) {
+        super(props);
+        this.state = {
+            open: false
+        }
+    }
+
+    openContent () {
+        this.setState({ open: !this.state.open });
+    }
+
+    closeContent () {
+        this.setState({ open: false });
+    }
+
     render () {
         return (
-            <StyledSidebar>
-                <Links onClick={this.handleClick}/>
-                <Content/>
+            <StyledSidebar open={this.state.open}>
+                <Menu onClick={() => this.openContent()}/>
+                <Content 
+                    open={this.state.open} 
+                    onClick={() => this.closeContent()}
+                />
             </StyledSidebar>
         );
     }
@@ -19,9 +38,18 @@ const StyledSidebar = styled.div`
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    right: 0;
+    right: ${(props) => props.open ? "0" : "-15rem"};
     background: #f6f6f6;
     border-radius: 4rem 0 0 4rem;
     display: flex;
-    margin-right: -5rem;
 `;
+
+// const StyledSidebar = styled.div`
+//     position: fixed;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     right: 0;
+//     background: #f6f6f6;
+//     border-radius: 4rem 0 0 4rem;
+//     display: flex;
+// `;
