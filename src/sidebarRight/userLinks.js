@@ -1,17 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
 import 'remixicon/fonts/remixicon.css';
+import { Link } from 'react-router-dom';
 
 export class UserLinks extends React.Component {
 
     render () {
         return (
             <StyledLinks>
-               <a href="">profile</a>
-               <a href="">bolts</a>
-               <a href="">following</a>
-               <a href="">settings</a>
-               <a href="">help</a> 
+                <Link to="/profile">
+                   profile
+                </Link>
+                <Link to="/bolts">
+                    bolts
+                </Link>
+                <Link to="/following">
+                    following
+                </Link>
+                <Link to="/settings">
+                    settings
+                </Link>
+                <Link to="/help">
+                    help
+                </Link>
             </StyledLinks>
         );
     }

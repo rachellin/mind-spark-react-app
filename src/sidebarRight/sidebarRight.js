@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Menu } from './menu';
-import { Content } from './content';
+import { Tab } from './tab';
 
 export class SidebarRight extends React.Component {
 
@@ -14,26 +14,31 @@ export class SidebarRight extends React.Component {
         }
     }
 
-    openContent (i) {
+    openTab (i) {
         console.log(i);
         i == 0 ? this.setState({ tab: 'user'}) : this.setState({ tab: 'notifs' });
         this.setState({ open: !this.state.open });
     }
 
-    closeContent () {
+    closeTab () {
         this.setState({ open: false });
+    }
+
+    componentDidMount() {
+        this.setState({ elementHeight: this.divRef.clientHeight });
     }
 
     render () {
         return (
             <StyledSidebar 
+                ref={element => this.divRef = element}
                 open={this.state.open}
             >
-                <Menu onClick={(i) => this.openContent(i)}/>
-                <Content 
+                <Menu onClick={(i) => this.openTab(i)}/>
+                <Tab 
                     open={this.state.open} 
                     tab={this.state.tab}
-                    onClick={() => this.closeContent()}
+                    onClick={() => this.closeTab()}
                 />
             </StyledSidebar>
         );
@@ -48,6 +53,7 @@ const StyledSidebar = styled.div`
     background: #f6f6f6;
     border-radius: 4rem 0 0 4rem;
     display: flex;
+    height: 29rem;
 `;
 
 // const StyledSidebar = styled.div`

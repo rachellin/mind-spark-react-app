@@ -5,14 +5,14 @@ import 'remixicon/fonts/remixicon.css';
 import { UserLinks } from './userLinks';
 import { NotifsTab } from './notifsTab';
 
-export class Content extends React.Component {
+export class Tab extends React.Component {
     render () {
         return (
-            <StyledContent open={this.props.open}>
-                <h1>title</h1>
+            <StyledTab open={this.props.open}>
+                <h1>{this.props.tab}</h1>
                 <button onClick={this.props.onClick}><i class="ri-arrow-right-s-line"></i></button>
                 {this.props.tab == 'user' ? <UserLinks/> : <NotifsTab/>}
-            </StyledContent>
+            </StyledTab>
         );
     }
 }
@@ -27,7 +27,7 @@ export class Content extends React.Component {
 //     }
 // `;
 
-const StyledContent = styled.div`
+const StyledTab = styled.div`
     position: relative;
     width: 15rem;
     padding: 2rem;
@@ -40,6 +40,12 @@ const StyledContent = styled.div`
     button {
         float:right;
         font-size: 1.5rem;
+    }
+
+    a {
+        display: flex;
+        flex-direction: column;
+        align-content: middle;
     }
 `;
 
