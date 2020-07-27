@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import 'remixicon/fonts/remixicon.css';
+import { Link } from 'react-router-dom';
 
 export class NotifsTab extends React.Component {
 
@@ -22,9 +23,14 @@ export class NotifsTab extends React.Component {
 
     render () {
         return (
-            <NotifContainer>
-               {this.generateNotifs(8)}
-            </NotifContainer>
+            <>
+                <NotifContainer>
+                    {this.generateNotifs(8)}
+                </NotifContainer>
+                <Link to="/notifications" className="see-all">
+                    see all
+                </Link>
+            </>
         );
     }
 }
@@ -35,13 +41,17 @@ export class NotifsTab extends React.Component {
 //     );
 // }
 
+const TabContainer = styled.div`
+    position: relative;
+`;
+
 const Notif = styled.div`
     border-bottom: 1px solid var(--border);
     padding: 1rem 0;
 `;
 
 const NotifContainer = styled.div`
-    height: 24rem;
+    height: 21rem;
     overflow-y: scroll;
 `;
 

@@ -10,7 +10,7 @@ export class Tab extends React.Component {
         return (
             <StyledTab open={this.props.open}>
                 <h1>{this.props.tab}</h1>
-                <button onClick={this.props.onClick}><i class="ri-arrow-right-s-line"></i></button>
+                <CloseButton onClick={this.props.onClick}><i class="ri-arrow-right-s-line"></i></CloseButton>
                 {this.props.tab == 'user' ? <UserLinks/> : <NotifsTab/>}
             </StyledTab>
         );
@@ -37,15 +37,19 @@ const StyledTab = styled.div`
         display: inline-block;
     }
 
-    button {
-        float:right;
-        font-size: 1.5rem;
-    }
+    a.see-all {
+        position: absolute;
+        bottom: 0;
+        left: 2rem;
+        width: calc(100% - 2rem * 2);
+        text-align: center;
+        padding: 1rem;
+        background: var(--background);
+    } 
+`;
 
-    a {
-        display: flex;
-        flex-direction: column;
-        align-content: middle;
-    }
+const CloseButton = styled.div`
+    float:right;
+    font-size: 1.5rem;
 `;
 

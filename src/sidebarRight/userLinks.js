@@ -29,7 +29,9 @@ export class UserLinks extends React.Component {
 }
 
 const StyledLinks = styled.div`
-
+    display: flex;
+    flex-direction: column;
+    
     a {
         display: block;
     }
