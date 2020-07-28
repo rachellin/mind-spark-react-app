@@ -52,7 +52,8 @@ class SidebarRight extends React.Component {
         super(props);
         this.state = {
             open: false,
-            tab: 'user'
+            tab: '',
+            previousTab: ''
         }
     }
 
@@ -63,13 +64,17 @@ class SidebarRight extends React.Component {
     }
 
     openTab (i) {
-        console.log(i);
         i == 0 ? this.setState({ tab: 'user'}) : this.setState({ tab: 'notifs' });
-        this.setState({ open: !this.state.open });
+        if (!this.state.open && (this.state.tab == this.state.previousTab)) {
+            this.setState({ open: !this.state.open });
+        } 
     }
 
     closeTab () {
-        this.setState({ open: false });
+        this.setState({ 
+            open: false,
+            previousTab: this.state.tab
+        });
     }
 
     componentDidMount() {

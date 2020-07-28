@@ -22,13 +22,6 @@ export class Menu extends React.Component {
     render () {
         return (
             <StyledMenu>
-                {/* <a onClick={() => this.props.onClick(0)}><i class="ri-user-line"></i></a>
-                <a href=""><i class="ri-home-2-line"></i></a>
-                <a href=""><i class="ri-compass-3-line"></i></a>
-                <a onClick={() => this.props.onClick(1)}><i class="ri-notification-2-line"></i></a>
-                <a href=""><i class="ri-pencil-line"></i></a>
-                <a href=""><i class="ri-cloud-line"></i></a> */}
-
                 <Link onClick={() => this.props.onClick(0)}>
                     <i class="ri-user-line"></i>
                 </Link>
