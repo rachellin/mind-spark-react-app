@@ -44,7 +44,6 @@ const StyledTab = styled.div`
         width: calc(100% - 2rem * 2);
         text-align: center;
         padding: 1rem;
-        background: var(--background);
     } 
 `;
 
