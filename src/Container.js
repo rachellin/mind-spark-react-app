@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom';
 
 import './App.css';
 
-import { SidebarRight } from './sidebarRight/sidebarRight';
+import SidebarRight from './sidebarRight/sidebarRight';
 import { Profile } from './containers/profile';
 import { Home } from './containers/home';
 import { Explore } from './containers/explore';
@@ -12,14 +12,6 @@ import { Create } from './containers/create';
 import { Clouds } from './containers/clouds';
 
 function Container () {
-
-  const location = useLocation();
-
-  // when pathname changes 
-  useEffect(() => {
-    const { pathname } = location;
-    console.log('New path:', pathname);
-  }, [location.pathname]);
 
   return (
     <>
