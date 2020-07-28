@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-route
 import './App.css';
 
 import SidebarRight from './sidebarRight/sidebarRight';
+import Header from './header/header';
+
 import { Profile } from './containers/profile';
 import { Home } from './containers/home';
 import { Explore } from './containers/explore';
@@ -15,6 +17,7 @@ function Container () {
 
   return (
     <>
+        <Header/>
         <SidebarRight/>
         <Switch>
             <Route path="/profile" exact component={Profile}/>
