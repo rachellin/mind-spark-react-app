@@ -5,12 +5,17 @@
   transition:all 0.4s linear;
 }
 
+body {
+  overflow-x: hidden;
+  background: var(--container);
+}
+
 :root {
   font-size: 15px;
   --teal: #bddbd8;
   --border: #eee;
   --background: #fff;
-  --container: #f6f6f6;
+  --container: #f8f8f8;
 }
 
 a {

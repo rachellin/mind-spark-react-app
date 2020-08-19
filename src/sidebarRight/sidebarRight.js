@@ -103,7 +103,7 @@ const StyledSidebar = styled.div`
     top: 50%;
     transform: translateY(-50%);
     right: ${(props) => props.open ? "0" : "-15rem"};
-    background: #f6f6f6;
+    background: var(--background);
     border-radius: 4rem 0 0 4rem;
     display: flex;
     height: 29rem;

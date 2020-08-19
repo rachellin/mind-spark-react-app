@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-route
 import './App.css';
 // import GlobalStyles from './styles/globalStyles';
 
-import { SidebarRight } from './sidebarRight/sidebarRight';
 import Container from './Container';
 
 function App () {

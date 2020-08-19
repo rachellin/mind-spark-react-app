@@ -5,6 +5,7 @@ import './App.css';
 
 import SidebarRight from './sidebarRight/sidebarRight';
 import Header from './header/header';
+import SidebarLeft from './sidebarLeft/sidebarLeft';
 
 import { Profile } from './containers/profile';
 import { Home } from './containers/home';
@@ -18,6 +19,7 @@ function Container () {
   return (
     <>
         <Header/>
+        {/* <SidebarLeft/> */}
         <SidebarRight/>
         <Switch>
             <Route path="/profile" exact component={Profile}/>
