@@ -7,7 +7,8 @@ export default function PostContainer () {
     return (
         <StyledContainer>
             post container!
-            <Post/>
+            <Post pub={true}/>
+            <Post pub={false}/>
         </StyledContainer>
     );
 }
@@ -15,4 +16,5 @@ export default function PostContainer () {
 const StyledContainer = styled.div`
     /*border: 1px solid #000;*/
     width: 55%;
+    margin-left: 4rem;
 `

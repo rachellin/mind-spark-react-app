@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { StyledPost, PostWrapper, PostHeader, PostContent } from '../styles/postStyles';
+import { StyledPost, PostWrapper, PostHeader, PostContent, PostInfo } from '../styles/postStyles';
+import { Thumbnail } from './thumbnail';
+import { Bolt } from './bolt';
 
 export class Post extends React.Component {
     render () {
@@ -25,11 +27,11 @@ export class Post extends React.Component {
 
                     <PostContent>
                         <div className="content-wrapper">
-                            {/* changes depending on whether pub or not */}
+                            {this.props.pub ? <Thumbnail/> : <Bolt/>}
                         </div>
                     </PostContent>
 
-                    <div class="post-info">
+                    <PostInfo>
 
                         <div class="post-actions">
                             <button class="info-tab"><i class="ri-star-fill"></i></button>
@@ -63,7 +65,7 @@ export class Post extends React.Component {
                             <a href="">report</a>
                         </div>
 
-                    </div>
+                    </PostInfo>
 
                 </PostWrapper>
             </StyledPost>
