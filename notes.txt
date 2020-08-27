@@ -1,0 +1,3 @@
+POST COMPONENT
+- why is the caption text centered?
+- how to make sure some props don't conflict? like, if pub == true, postImages can't be true

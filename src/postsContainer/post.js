@@ -27,30 +27,33 @@ export class Post extends React.Component {
 
                     <PostContent>
                         <div className="content-wrapper">
-                            {this.props.pub ? <Thumbnail/> : <Bolt/>}
+                            {this.props.pub ? 
+                                <Thumbnail/> : 
+                                <Bolt postImages={this.props.postImages} images={this.props.images} caption={this.props.caption}/>
+                            }
                         </div>
                     </PostContent>
 
                     <PostInfo>
 
-                        <div class="post-actions">
-                            <button class="info-tab"><i class="ri-star-fill"></i></button>
-                            <div class="action">
+                        <div className="post-actions">
+                            <button className="info-tab"><i className="ri-star-fill"></i></button>
+                            <div className="action">
                                 <b>138</b> 
-                                <i class="ri-flashlight-line"></i>
+                                <i className="ri-flashlight-line"></i>
                             </div>
-                            <div class="action">
+                            <div className="action">
                                 <b>26</b>
-                                <i class="ri-chat-3-line"></i>
+                                <i className="ri-chat-3-line"></i>
                             </div>
-                            <div class="action">
+                            <div className="action">
                                 <b>45</b>
-                                <i class="ri-share-forward-line"></i>
+                                <i className="ri-share-forward-line"></i>
                             </div>
                         </div>
 
-                        <div class="post-tags">
-                            <button class="info-tab"><i class="ri-hashtag"></i></button>
+                        <div className="post-tags">
+                            <button className="info-tab"><i className="ri-hashtag"></i></button>
                             <a href="">life science</a>
                             <a href="">biology</a>
                             <a href="">microbiology</a>
@@ -58,8 +61,8 @@ export class Post extends React.Component {
                             <a href="">article</a>
                         </div>
 
-                        <div class="more-actions">
-                            <button class="info-tab"><i class="ri-more-fill"></i></button>
+                        <div className="more-actions">
+                            <button className="info-tab"><i className="ri-more-fill"></i></button>
                             <a href="">add to bookmarks</a>
                             <a href="">copy link</a>
                             <a href="">report</a>
