@@ -14,9 +14,10 @@ export class Thumbnail extends React.Component {
                         <i class="ri-palette-line"></i>
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...
+                        {this.props.desc}
                     </p>
-                    <button>see post</button>
+                    {/* <button>see post</button> */}
+                    <a href={this.props.postLink}>see post</a>
                 </div>
             </PubContainer>
         )

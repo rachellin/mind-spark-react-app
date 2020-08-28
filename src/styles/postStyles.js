@@ -133,7 +133,7 @@ export const PubContainer = styled.div`
         padding: 1rem;
     }
       
-    .pub-desc button {
+    .pub-desc a {
         margin-top: 1rem;
         padding: 1rem;
         background: #fff;
@@ -176,7 +176,7 @@ export const PostInfo = styled.div`
     
     .post-tags {
         background: #FCF3D9;
-        width: 8rem;
+        width: ${props => props.tagsOpen ? "calc(100% - 4rem)" : "8rem"};
         transition: 0.4s width;
     }
     
@@ -185,17 +185,21 @@ export const PostInfo = styled.div`
         padding: 0.3rem 0.8rem;
         font-size: 0.8rem;
         margin-right: 0.5rem;
+        opacity: ${props => props.tagsOpen ? "1" : "0"};
+        display: ${props => props.tagsOpen ? "inline-block" : "none"};
+        transition: 0.2s ease-in;
     }
-    
-    .post-tags a, .more-actions a {
-        opacity: 0;
-        display: none;
+
+    .more-actions a {
+        margin-right: 1rem;
+        opacity: ${props => props.moreOpen ? "1" : "0"};
+        display: ${props => props.moreOpen ? "inline-block" : "none"};
         transition: 0.2s ease-in;
     }
     
     .more-actions {
         background: #ECF2F8;
-        width: 4rem;
+        width: ${props => props.moreOpen ? "calc(100% - 8rem)" : "4rem"};
     }
     
     button.info-tab {

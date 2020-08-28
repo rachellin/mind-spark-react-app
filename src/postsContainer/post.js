@@ -5,6 +5,27 @@ import { Thumbnail } from './thumbnail';
 import { Bolt } from './bolt';
 
 export class Post extends React.Component {
+    constructor (props) {
+        super(props);
+        this.state = {
+            tagsOpen: false,
+            moreOpen: false
+        }
+    }
+
+    handleTagsClick () {
+        if (!(this.state.moreOpen && this.state.tagsOpen)) {
+            this.setState({ tagsOpen: !this.state.tagsOpen });
+        }
+    }
+
+    handleMoreClick () {
+        this.setState({ 
+            moreOpen: !this.state.moreOpen,
+            tagsOpen: !this.state.tagsOpen
+        });
+    }
+
     render () {
         return (
             <StyledPost>
@@ -28,13 +49,13 @@ export class Post extends React.Component {
                     <PostContent>
                         <div className="content-wrapper">
                             {this.props.pub ? 
-                                <Thumbnail/> : 
+                                <Thumbnail desc={this.props.desc} postLink={this.props.postLink}/> : 
                                 <Bolt postImages={this.props.postImages} images={this.props.images} caption={this.props.caption}/>
                             }
                         </div>
                     </PostContent>
 
-                    <PostInfo>
+                    <PostInfo tagsOpen={this.state.tagsOpen} moreOpen={this.state.moreOpen}>
 
                         <div className="post-actions">
                             <button className="info-tab"><i className="ri-star-fill"></i></button>
@@ -53,7 +74,7 @@ export class Post extends React.Component {
                         </div>
 
                         <div className="post-tags">
-                            <button className="info-tab"><i className="ri-hashtag"></i></button>
+                            <button className="info-tab" onClick={() => this.handleTagsClick()}><i className="ri-hashtag"></i></button>
                             <a href="">life science</a>
                             <a href="">biology</a>
                             <a href="">microbiology</a>
@@ -62,7 +83,7 @@ export class Post extends React.Component {
                         </div>
 
                         <div className="more-actions">
-                            <button className="info-tab"><i className="ri-more-fill"></i></button>
+                            <button className="info-tab" onClick={() => this.handleMoreClick()}><i className="ri-more-fill"></i></button>
                             <a href="">add to bookmarks</a>
                             <a href="">copy link</a>
                             <a href="">report</a>
