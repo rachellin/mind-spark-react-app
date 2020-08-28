@@ -20,10 +20,16 @@ export class Post extends React.Component {
     }
 
     handleMoreClick () {
-        this.setState({ 
-            moreOpen: !this.state.moreOpen,
-            tagsOpen: !this.state.tagsOpen
-        });
+        if (this.state.tagsOpen && !this.state.moreOpen) {
+            this.setState({
+                moreOpen: !this.state.moreOpen
+            })
+        } else {
+            this.setState({ 
+                moreOpen: !this.state.moreOpen,
+                tagsOpen: !this.state.tagsOpen
+            });
+        }
     }
 
     render () {
