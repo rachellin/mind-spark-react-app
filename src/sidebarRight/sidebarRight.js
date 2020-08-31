@@ -73,9 +73,13 @@ class SidebarRight extends React.Component {
     closeTab () {
         this.setState({ 
             open: false,
-            tab: null,
             previousTab: this.state.tab
         });
+        setTimeout(() => {
+            this.setState({
+                tab: null
+            })
+        }, 400);
     }
 
     componentDidMount() {

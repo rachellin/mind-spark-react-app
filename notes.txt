@@ -4,6 +4,7 @@ POST COMPONENT
 - figure out how to make tags and more actions section open and close in the same amount of time
 - for later: lightbox for post images when clicked on
 - do i want the tags and more actions tabs to always close together? what if i opened the tags first then the more actions
+- if the user uploads video, then they can't upload more media
 
 
             <Lightbox>
