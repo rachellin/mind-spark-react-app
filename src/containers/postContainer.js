@@ -10,6 +10,7 @@ export default function PostContainer () {
             <Post pub={true} desc={postData[0].desc} postLink={postData[0].postLink}/>
             <Post pub={false} postImages={true} images={postData[1].images} caption={postData[1].caption}/>
             <Post pub={false} postImages={false} caption={postData[2].caption}/>
+            <Post pub={false} hasVideo={true} caption="this has a video!!!"/>
         </StyledContainer>
     );
 }

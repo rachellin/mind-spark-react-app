@@ -55,8 +55,15 @@ export class Post extends React.Component {
                     <PostContent>
                         <div className="content-wrapper">
                             {this.props.pub ? 
-                                <Thumbnail desc={this.props.desc} postLink={this.props.postLink}/> : 
-                                <Bolt postImages={this.props.postImages} images={this.props.images} caption={this.props.caption}/>
+                                <Thumbnail 
+                                    desc={this.props.desc} 
+                                    postLink={this.props.postLink}/> : 
+                                <Bolt 
+                                    hasVideo={this.props.hasVideo}
+                                    postImages={this.props.postImages} 
+                                    images={this.props.images} 
+                                    caption={this.props.caption}
+                                />
                             }
                         </div>
                     </PostContent>

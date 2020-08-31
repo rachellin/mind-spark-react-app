@@ -69,6 +69,11 @@ export const BoltContainer = styled.div`
     width: 100%;
     border: 1px solid lightblue;
 
+    video {
+        width: 100%;
+        border-radius: 2rem;
+    }
+
     .post-images {
         display: flex;
         flex-wrap: wrap;
@@ -81,6 +86,10 @@ export const BoltContainer = styled.div`
         object-fit: cover;
         flex-grow: 1;
         margin: 0.25rem;
+    }
+
+    .post-images img:hover {
+        cursor: pointer;
     }
   
     .post-caption {
