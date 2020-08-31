@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { BoltContainer } from '../styles/postStyles';
+import { BoltContainer, Lightbox } from '../styles/postStyles';
 
 export class Bolt extends React.Component {
 
     render () {
         return (
             <>
+
             <BoltContainer>
                 {this.props.postImages ? <PostImages images={this.props.images}/> : null}
                 {this.props.hasVideo ? <PostVideo/> : null}

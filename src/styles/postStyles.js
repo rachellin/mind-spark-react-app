@@ -98,6 +98,16 @@ export const BoltContainer = styled.div`
     }
 `;
 
+export const Lightbox = styled.div`
+    background: rgb(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+`
+
 export const PubContainer = styled.div`
     display: flex;
     flex-wrap: nowrap;
