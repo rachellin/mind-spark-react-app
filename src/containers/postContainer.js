@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { Poster } from '../postsContainer/poster';
 import { Post } from '../postsContainer/post';
 
 export default function PostContainer () {
     return (
         <StyledContainer>
-            post container!
+            <Poster/>
             <Post pub={true} desc={postData[0].desc} postLink={postData[0].postLink}/>
             <Post pub={false} postImages={true} images={postData[1].images} caption={postData[1].caption}/>
             <Post pub={false} postImages={false} caption={postData[2].caption}/>

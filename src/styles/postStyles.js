@@ -3,6 +3,12 @@ import styled from 'styled-components';
 export const StyledPost = styled.div`
     overflow: hidden;
     margin-bottom: 6rem;
+
+    input[name="post-text"] {
+        border: 1px solid #000;
+        padding: 2rem 4rem;
+        width: 100%;
+    }
 `;
 
 export const PostWrapper = styled.div`
@@ -168,7 +174,7 @@ export const PostInfo = styled.div`
     //border:1px solid #000;
     background: #ECF2F8;
 
-    .post-actions, .post-tags, .more-actions {
+    .post-actions, .post-tags, .more-actions, .poster-tags, .poster-submit {
         position: absolute;
         top: 0;
         right: 0;
@@ -197,16 +203,15 @@ export const PostInfo = styled.div`
         background: #FCF3D9;
         width: ${props => props.tagsOpen ? "calc(100% - 4rem)" : "8rem"};
         transition: 0.4s width;
-    }
-    
-    .post-tags a {
-        border-radius: 2rem;
-        padding: 0.3rem 0.8rem;
-        font-size: 0.8rem;
-        margin-right: 0.5rem;
-        opacity: ${props => props.tagsOpen ? "1" : "0"};
-        display: ${props => props.tagsOpen ? "inline-block" : "none"};
-        transition: 0.2s ease-in;
+
+        a {
+            padding: 0.3rem 0.8rem;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            opacity: ${props => props.tagsOpen ? "1" : "0"};
+            display: ${props => props.tagsOpen ? "inline-block" : "none"};
+            transition: 0.2s ease-in;
+        }
     }
 
     .more-actions a {
@@ -220,6 +225,38 @@ export const PostInfo = styled.div`
         background: #ECF2F8;
         width: ${props => props.moreOpen ? "calc(100% - 8rem)" : "4rem"};
     }
+
+    .poster-tags {
+        background: #FCF3D9;
+        width: 100%;
+        text-align: left;
+        display: flex;
+
+        input {
+            width: 100%;
+            height: 100%;
+            //display: inline-block;
+            border: 1px solid #000;
+        }
+
+        .tags-wrapper {
+            margin-left: 1rem;
+
+            a {
+                border: 2px solid #fff;
+                //display: inline-block;
+                padding: 0.3rem 0.8rem;
+                font-size: 0.8rem;
+                margin-right: 0.5rem;
+                //width: auto;
+            }
+        }
+    }
+
+    .poster-submit {
+        background: #ECF2F8;
+        width: 8rem;
+    }
     
     button.info-tab {
         font-size: 1.75rem;
@@ -227,6 +264,13 @@ export const PostInfo = styled.div`
         padding: 0;
         float: left;
     }
+`;
+
+export const PosterWrapper = styled.div`
+    background: var(--background);
+    padding: 2rem 4rem;
+    border-radius: 2rem;
+    margin-bottom: 6rem;
 `;
 
 

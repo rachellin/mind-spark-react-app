@@ -34,15 +34,22 @@ a:hover {
   -o-transition:0.4s ease-in;
 }
 
-button {
+button, input {
   border:none;
   background:none;
 }
 
-button:focus {
+button:focus, input:focus {
   outline:none;
 }
 
 button:hover {
-  cursor:pointer;
+  cursor: pointer;
 }
+
+input[type=submit] {
+  cursor: pointer;
+}
+
+
+
