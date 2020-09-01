@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { StyledPost, PostWrapper, PostHeader, PostInfo } from '../styles/postStyles';
+import { StyledPost, PostWrapper, PostHeader, PostInfo, PostForm } from '../styles/postStyles';
 
 export class Poster extends React.Component {
 
@@ -9,7 +9,8 @@ export class Poster extends React.Component {
         super(props);
         this.state = {
             tags: [],
-            tagElements: []
+            tagElements: [],
+            openFiles: null
         };
         this.makeTag = this.makeTag.bind(this);
     }
@@ -40,6 +41,14 @@ export class Poster extends React.Component {
         }
     }
 
+    fakeClick(e) {
+        e.click();
+    }
+
+    addMedia () {
+        this.setState({ openFiles: this.fakeClick });
+    }
+
     render () {
         return (
             <StyledPost>
@@ -53,8 +62,17 @@ export class Poster extends React.Component {
                         </div>
                     </PostHeader>
 
-                    <form>
-                        <input type="text" name="post-text" placeholder="Post something..."></input>
+                    <PostForm>
+                        <div className="post-body">
+                            <input type="text" name="post-text" placeholder="Post something..."></input> 
+
+                            <input 
+                                type="file" name="file[]" className="file" id="s-file" style={{ display: "none" }} 
+                                ref={this.state.openFiles} onClick={() => console.log("clicked!")}>
+                            </input>
+                            <button onClick={() => this.addMedia()}><i class="ri-image-add-fill"></i></button>
+                            <div id="fileNames"></div>
+                        </div>
                         
                         <PostInfo>
                             <div className="poster-tags">
@@ -67,7 +85,7 @@ export class Poster extends React.Component {
                             </div>
                             <input type="submit" value="post" className="poster-submit"></input>
                         </PostInfo>
-                    </form>
+                    </PostForm>
                 </PostWrapper>
             </StyledPost>
         );

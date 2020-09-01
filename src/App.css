@@ -13,6 +13,8 @@ body {
 :root {
   font-size: 15px;
   --teal: #bddbd8;
+  --blue: #ECF2F8;
+  --yellow: #FCF3D9;
   --border: #eee;
   --background: #fff;
   --container: #f8f8f8;

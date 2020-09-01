@@ -5,7 +5,7 @@ export const StyledPost = styled.div`
     margin-bottom: 6rem;
 
     input[name="post-text"] {
-        border: 1px solid #000;
+        //border: 1px solid #000;
         padding: 2rem 4rem;
         width: 100%;
     }
@@ -236,7 +236,7 @@ export const PostInfo = styled.div`
             width: 100%;
             height: 100%;
             //display: inline-block;
-            border: 1px solid #000;
+            //border: 1px solid #000;
         }
 
         .tags-wrapper {
@@ -271,6 +271,38 @@ export const PosterWrapper = styled.div`
     padding: 2rem 4rem;
     border-radius: 2rem;
     margin-bottom: 6rem;
+`;
+
+export const PostForm = styled.form`
+    .post-body {
+        position: relative;
+        //border: 1px solid skyblue;
+        padding-bottom: 2rem;
+
+        button {
+            position: absolute; 
+            bottom: 1.5rem;
+            right: 1rem;
+            color: rgb(0, 0, 0, 0.75);
+
+            i {
+                background: rgb(252, 243, 217, 0.5);
+                border-radius: 50%;
+                width: 1.25rem;
+                height: 1.25rem;
+                font-size: 1.25rem;
+                padding: 0.8rem;
+            }
+
+            :hover {
+                color: color: #000;
+            }
+
+            :hover i {
+                background: var(--yellow);
+            }
+        }
+    }
 `;
 
 

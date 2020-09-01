@@ -11,3 +11,7 @@ POST COMPONENT
                 {/* carousel here later on */}
                 <PostImages images={this.props.images}/>
             </Lightbox>
+
+POSTER
+- why does tag go to the next line when there's a space in it
+- horizontal scroll or sth for the tags (tags will have to shift to the left so that the input box doesn't disappear)
