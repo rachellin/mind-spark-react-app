@@ -53,5 +53,6 @@ input[type=submit] {
   cursor: pointer;
 }
 
-
-
+::-webkit-scrollbar { width: 11px; background: var(--container); }
+::-webkit-scrollbar-thumb {background:#999;}
+::-webkit-scrollbar,::-webkit-scrollbar-thumb {border:5px solid var(--background);}

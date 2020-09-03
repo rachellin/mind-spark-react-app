@@ -172,7 +172,7 @@ export const PostInfo = styled.div`
     text-align: center;
     padding: 2rem;
     //border:1px solid #000;
-    background: #ECF2F8;
+    background: ${props => props.poster? "var(--yellow)" : "#ECF2F8"};
 
     .post-actions, .post-tags, .more-actions, .poster-tags, .poster-submit {
         position: absolute;
@@ -228,15 +228,27 @@ export const PostInfo = styled.div`
 
     .poster-tags {
         background: #FCF3D9;
-        width: 100%;
-        text-align: left;
+        width: calc(100% - 8rem);
+        left: 0;
         display: flex;
+        border: 1px solid salmon;
+
+        .tags-container {
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            overflow-x: scroll;
+            display: flex;
+            min-width: 4rem;
+            border: 1px solid lightblue;
+        }
 
         input {
             width: 100%;
             height: 100%;
             //display: inline-block;
-            //border: 1px solid #000;
+            border: 1px solid #000;
+            padding-right: 10rem;
         }
 
         .tags-wrapper {

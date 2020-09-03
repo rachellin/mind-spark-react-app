@@ -42,26 +42,6 @@ export class Poster extends React.Component {
         }
     }
 
-    uploadMedia (e) {
-        if (e.target.files) {
-            const files = Array.from(e.target.files);
-            Promise.all(files.map(file => {
-                return (new Promise((resolve, reject) => {
-                    const reader = new FileReader();
-                    reader.addEventListener('load', (event) => {
-                        resolve(event.target.result);
-                    });
-                    reader.addEventListener('error', reject);
-                    reader.readAsDataURL(file);
-                }));
-            }))
-            .then(images => {
-                this.setState({ mediaArray: images, file: images[0] });
-            })
-            .catch(err => console.error(err));
-        }
-    }
-
     render () {
         return (
             <StyledPost>
@@ -77,21 +57,20 @@ export class Poster extends React.Component {
 
                     <PostForm>
                         <div className="post-body">
-                            <div className="post-media">
-                                <img src={this.state.file}/>
-                            </div>
-                            <input type="text" name="post-text" placeholder="Post something..."></input> 
                             <Uploader/>
+                            <input type="text" name="post-text" placeholder="Post something..."></input> 
                         </div>
                         
-                        <PostInfo>
+                        <PostInfo poster={true}>
                             <div className="poster-tags">
                                 <button className="info-tab"><i className="ri-hashtag"></i></button>
-                                <div className="tags-wrapper">{this.state.tagElements}</div>
-                                <input 
-                                    type="text" name="post-tags" onKeyPress={this.makeTag}
-                                    placeholder={this.state.tags.length > 0 ? "" : "what's your post about?"}>
-                                </input>
+                                <div className="tags-container">
+                                    <div className="tags-wrapper">{this.state.tagElements}</div>
+                                    <input 
+                                        type="text" name="post-tags" onKeyPress={this.makeTag}
+                                        placeholder={this.state.tags.length > 0 ? "" : "what's your post about?"}>
+                                    </input>
+                                </div>
                             </div>
                             <input type="submit" value="post" className="poster-submit"></input>
                         </PostInfo>
@@ -103,16 +82,43 @@ export class Poster extends React.Component {
 }
 
 const Uploader = (props) => {
-    const hiddenFileInput = React.useRef(null);
+    const hiddenFileInput = React.createRef();
 
     const openFiles = (e) => {
         // this.setState({ openFiles: this.fakeClick });
         hiddenFileInput.current.click();
     }
 
+    let mediaCollection;
+
+    const uploadMedia = (e) => {
+        console.log("uploading!");
+        if (e.target.files) {
+            const files = Array.from(e.target.files);
+            Promise.all(files.map(file => {
+                return (new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.addEventListener('load', (event) => {
+                        resolve(event.target.result);
+                    });
+                    reader.addEventListener('error', reject);
+                    reader.readAsDataURL(file);
+                }));
+            }))
+            .then(images => {
+                // this.setState({ mediaArray: images, file: images[0] });
+                mediaCollection = images[0];
+            })
+            .catch(err => console.error(err));
+        }
+    }
+
     return (
         <>
-        <input type="file" style={{ display: "none" }} ref={hiddenFileInput}/>
+        <div className="post-media">
+            <img src={mediaCollection}/>
+        </div>
+        <input type="file" hidden onChange={() => console.log("hi")}/>
         <button onClick={openFiles}><i class="ri-image-add-fill"></i></button>
         </>
     );
