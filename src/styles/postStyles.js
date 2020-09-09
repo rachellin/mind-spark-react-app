@@ -104,7 +104,7 @@ export const BoltContainer = styled.div`
     }
 `;
 
-export const Lightbox = styled.div`
+export const StyledLightbox = styled.div`
     background: rgb(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
@@ -112,6 +112,7 @@ export const Lightbox = styled.div`
     width: 100vw;
     height: 100vh;
     text-align: center;
+    z-index: 99;
 `
 
 export const PubContainer = styled.div`
@@ -146,16 +147,15 @@ export const PubContainer = styled.div`
       
     .pub-type {
         margin-bottom: 2rem;
-    }
-      
-    .pub-type i {
-        background: #FCF3D9;
-        border: 3px solid #fff;
-        border-radius: 50%;
-        width: 1.5rem;
-        height: 1.5rem;
-        font-size: 1.5rem;
-        padding: 1rem;
+        i {
+            background: #FCF3D9;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            width: 1.5rem;
+            height: 1.5rem;
+            font-size: 1.5rem;
+            padding: 1rem;
+        }
     }
       
     .pub-desc a {
