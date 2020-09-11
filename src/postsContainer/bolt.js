@@ -29,8 +29,8 @@ export class Bolt extends React.Component {
             <>
             {this.state.lightboxOn ? <Lightbox images={this.props.images} onClick={(e) => this.checkClick(e)} index={this.state.clickedIndex}/> : null}
             <BoltContainer>
-                {this.props.postImages ? <PostImages images={this.props.images} onClick={(index) => this.showLightbox(index)}/> : null}
-                {this.props.hasVideo ? <PostVideo/> : null}
+                {this.props.images ? <PostImages images={this.props.images} onClick={(index) => this.showLightbox(index)}/> : null}
+                {this.props.video ? <PostVideo videoURL={this.props.video}/> : null}
             </BoltContainer>
             <PostCaption content={this.props.caption}/>
             </>
@@ -44,10 +44,10 @@ const PostImages = (props) => {
     )
 }
 
-const PostVideo = () => {
+const PostVideo = (props) => {
     return (
         <video controls loop muted autoPlay>
-            <source src="/trailer.mp4" type="video/mp4"/>
+            <source src={props.videoURL} type="video/mp4"/>
         </video>
     );
 }

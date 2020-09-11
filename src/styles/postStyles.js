@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledPost = styled.div`
-    overflow: hidden;
+    //overflow-y: hidden;
     margin-bottom: 6rem;
 
     input[name="post-text"] {
@@ -21,6 +21,10 @@ export const PostWrapper = styled.div`
 export const PostHeader = styled.div`
     position: relative;
     margin-bottom: 1rem;
+
+    .author {
+        position: relative;
+    }
 
     .author-pic {
         position: absolute;
@@ -61,7 +65,6 @@ export const PostHeader = styled.div`
 export const PostContent = styled.div`
     padding: 2rem 4rem;
     margin: 2rem 0;
-    border: 1px solid salmon;
 
     .content-wrapper {
         /*width: calc(650px - 8rem);*/
@@ -73,7 +76,6 @@ export const PostContent = styled.div`
 
 export const BoltContainer = styled.div`
     width: 100%;
-    border: 1px solid lightblue;
 
     video {
         width: 100%;

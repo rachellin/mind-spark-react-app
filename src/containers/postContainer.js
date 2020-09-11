@@ -8,11 +8,11 @@ export default function PostContainer () {
     return (
         <StyledContainer>
             <Poster/>
-            <Post pub={true} desc={postData[0].desc} postLink={postData[0].postLink}/>
-            <Post pub={false} postImages={true} images={postData[1].images} caption={postData[1].caption}/>
-            <Post pub={false} postImages={false} caption={postData[2].caption}/>
-            <Post pub={false} hasVideo={true} caption={postData[3].caption}/>
-            <Post pub={false} postImages={true} images={postData[4].images}/>
+            <Post pub={true} desc={postData[0].desc} postLink={postData[0].postLink} tags={["one", "two"]}/>
+            <Post pub={false} images={postData[1].images} caption={postData[1].caption} originalAuthor="Bob"/>
+            <Post pub={false} caption={postData[2].caption}/>
+            <Post pub={false} video="/trailer.mp4" caption={postData[3].caption}/>
+            <Post pub={false} images={postData[4].images}/>
         </StyledContainer>
     );
 }
@@ -41,7 +41,7 @@ const postData = [
         caption: 'this is a very cool caption!'
     },
     {
-        caption: 'this a post with no images :( just some text'
+        caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     },
     {
         caption: 'this has a video!!'
@@ -50,7 +50,7 @@ const postData = [
         images: [
             "https://i.pinimg.com/564x/eb/75/4e/eb754e8232542314901dd66256fcf61b.jpg",
             "https://i.pinimg.com/564x/e4/7f/7e/e47f7ecf4ecbd3d5e56b4a7b4e52cb8d.jpg",
-            "https://i.pinimg.com/564x/1b/2f/9e/1b2f9e1264af3fa80610661a52c94ac7.jpg"
+            "https://i.pinimg.com/564x/4d/35/23/4d352360fb4041f0e42becdb70e6916f.jpg"
         ],
         caption: 'another post with images yay'
     }

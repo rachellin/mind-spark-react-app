@@ -50,7 +50,7 @@ export class Poster extends React.Component {
                     <PostHeader>
                         <div className="author">
                             <div className="author-pic">
-                                <img src=""/>
+                                <img src={this.props.authorPic} alt="author's profile picture"/>
                             </div>
                         </div>
                     </PostHeader>
@@ -122,4 +122,8 @@ const Uploader = (props) => {
         <button onClick={openFiles}><i class="ri-image-add-fill"></i></button>
         </>
     );
+}
+
+Poster.defaultProps = {
+    authorPic: "https://i.pinimg.com/564x/11/bd/2c/11bd2cb6af23127447dcb7b05423d3f0.jpg"
 }

@@ -2,16 +2,14 @@ POST COMPONENT
 - why is the caption text centered?
 - how to make sure some props don't conflict? like, if pub == true, postImages can't be true
 - figure out how to make tags and more actions section open and close in the same amount of time
-- for later: lightbox for post images when clicked on
 - do i want the tags and more actions tabs to always close together? what if i opened the tags first then the more actions
 - if the user uploads video, then they can't upload more media
+- show tags section if post has no tags?
+- figure out props for date etc later w api 
+- for non pubs, go to post page when the whole container is clicked on?
 
-
-            <Lightbox>
-                {/* carousel here later on */}
-                <PostImages images={this.props.images}/>
-            </Lightbox>
 
 POSTER
 - why does tag go to the next line when there's a space in it
 - horizontal scroll or sth for the tags (tags will have to shift to the left so that the input box doesn't disappear)
+- show button for poster modal when user scrolls past poster 

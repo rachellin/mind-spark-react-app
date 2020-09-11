@@ -40,14 +40,14 @@ export class Post extends React.Component {
                     <PostHeader>
                         <div className="author">
                             <div className="author-pic">
-                                <img src=""/>
+                                <img src={this.props.authorPic} alt="author's profile picture"/>
                             </div>
                             <div className="author-name">
-                                {/* depends on whether it was original or reposted */}
-                                Jane Doe reposted 
+                                {this.props.originalAuthor ? `${this.props.author} reposted this from ${this.props.originalAuthor}` : 
+                                `${this.props.author} posted this`} 
                             </div>
                             <div className="post-timestamp">
-                                <a title="1h ago">aug 15, 2020</a>
+                                <a title="1h ago">{this.props.date}</a>
                             </div>
                         </div>
                     </PostHeader>
@@ -59,8 +59,7 @@ export class Post extends React.Component {
                                     desc={this.props.desc} 
                                     postLink={this.props.postLink}/> : 
                                 <Bolt 
-                                    hasVideo={this.props.hasVideo}
-                                    postImages={this.props.postImages} 
+                                    video={this.props.video}
                                     images={this.props.images} 
                                     caption={this.props.caption}
                                 />
@@ -88,11 +87,7 @@ export class Post extends React.Component {
 
                         <div className="post-tags">
                             <button className="info-tab" onClick={() => this.handleTagsClick()}><i className="ri-hashtag"></i></button>
-                            <a href="">life science</a>
-                            <a href="">biology</a>
-                            <a href="">microbiology</a>
-                            <a href="">genetics</a>
-                            <a href="">article</a>
+                            {this.props.tags ? this.props.tags.map(tag => <a href="">{tag}</a>) : null}
                         </div>
 
                         <div className="more-actions">
@@ -110,4 +105,10 @@ export class Post extends React.Component {
     }
 }
 
+const currentDate = new Date();
 
+Post.defaultProps = {
+    author: "Jane Doe",
+    date: "Sep 10, 2020",
+    authorPic: "https://i.pinimg.com/564x/11/bd/2c/11bd2cb6af23127447dcb7b05423d3f0.jpg"
+}
