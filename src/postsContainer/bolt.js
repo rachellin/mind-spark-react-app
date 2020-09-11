@@ -7,12 +7,15 @@ export class Bolt extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            lightboxOn: false
+            lightboxOn: false,
         }
     }
 
-    showLightbox () {
-        this.setState({ lightboxOn: true });
+    showLightbox (index) {
+        this.setState({ 
+            lightboxOn: true,
+            clickedIndex: index
+        });
     }
 
     checkClick (e) {
@@ -24,9 +27,9 @@ export class Bolt extends React.Component {
     render () {
         return (
             <>
-            {this.state.lightboxOn ? <Lightbox images={this.props.images} onClick={(e) => this.checkClick(e)}/> : null}
+            {this.state.lightboxOn ? <Lightbox images={this.props.images} onClick={(e) => this.checkClick(e)} index={this.state.clickedIndex}/> : null}
             <BoltContainer>
-                {this.props.postImages ? <PostImages images={this.props.images} onClick={() => this.showLightbox()}/> : null}
+                {this.props.postImages ? <PostImages images={this.props.images} onClick={(index) => this.showLightbox(index)}/> : null}
                 {this.props.hasVideo ? <PostVideo/> : null}
             </BoltContainer>
             <PostCaption content={this.props.caption}/>
@@ -37,7 +40,7 @@ export class Bolt extends React.Component {
 
 const PostImages = (props) => {
     return (
-        <div className="post-images">{props.images.map(i => { return <img src={i} onClick={props.onClick}/>})}</div>
+        <div className="post-images">{props.images.map((url, index) => { return <img src={url} onClick={() => props.onClick(index)}/>})}</div>
     )
 }
 

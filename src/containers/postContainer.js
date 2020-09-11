@@ -11,7 +11,8 @@ export default function PostContainer () {
             <Post pub={true} desc={postData[0].desc} postLink={postData[0].postLink}/>
             <Post pub={false} postImages={true} images={postData[1].images} caption={postData[1].caption}/>
             <Post pub={false} postImages={false} caption={postData[2].caption}/>
-            <Post pub={false} hasVideo={true} caption="this has a video!!!"/>
+            <Post pub={false} hasVideo={true} caption={postData[3].caption}/>
+            <Post pub={false} postImages={true} images={postData[4].images}/>
         </StyledContainer>
     );
 }
@@ -41,5 +42,16 @@ const postData = [
     },
     {
         caption: 'this a post with no images :( just some text'
+    },
+    {
+        caption: 'this has a video!!'
+    },
+    {
+        images: [
+            "https://i.pinimg.com/564x/eb/75/4e/eb754e8232542314901dd66256fcf61b.jpg",
+            "https://i.pinimg.com/564x/e4/7f/7e/e47f7ecf4ecbd3d5e56b4a7b4e52cb8d.jpg",
+            "https://i.pinimg.com/564x/1b/2f/9e/1b2f9e1264af3fa80610661a52c94ac7.jpg"
+        ],
+        caption: 'another post with images yay'
     }
 ]
