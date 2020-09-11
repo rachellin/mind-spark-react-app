@@ -15,8 +15,6 @@ export class Clouds extends React.Component {
     }
 }
 
-const StyledCarousel = styled.div`
-    background: lightpink;
-`;
+
 
 
