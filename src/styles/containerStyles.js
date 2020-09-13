@@ -5,3 +5,9 @@ export const StyledContainer = styled.div`
     padding: 2rem 4rem;
 `;
 
+export const MainContent = styled.div`
+    /*border: 1px solid #000;*/
+    width: 55%;
+    margin-left: 4rem;
+`
+

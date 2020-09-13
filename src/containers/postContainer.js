@@ -3,25 +3,21 @@ import styled from 'styled-components';
 
 import { Poster } from '../postsContainer/poster';
 import { Post } from '../postsContainer/post';
+import { MainContent } from '../styles/containerStyles';
 
 export default function PostContainer () {
     return (
-        <StyledContainer>
+        <MainContent>
             <Poster/>
             <Post pub={true} desc={postData[0].desc} postLink={postData[0].postLink} tags={["one", "two"]}/>
             <Post pub={false} images={postData[1].images} caption={postData[1].caption} originalAuthor="Bob"/>
             <Post pub={false} caption={postData[2].caption}/>
             <Post pub={false} video="/trailer.mp4" caption={postData[3].caption}/>
             <Post pub={false} images={postData[4].images}/>
-        </StyledContainer>
+        </MainContent>
     );
 }
 
-const StyledContainer = styled.div`
-    /*border: 1px solid #000;*/
-    width: 55%;
-    margin-left: 4rem;
-`
 const postData = [
     {
         type: "graphic",

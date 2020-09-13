@@ -13,3 +13,7 @@ POSTER
 - why does tag go to the next line when there's a space in it
 - horizontal scroll or sth for the tags (tags will have to shift to the left so that the input box doesn't disappear)
 - show button for poster modal when user scrolls past poster 
+
+
+PROFILE
+- convert numbers to shortened versions when past 1k
